@@ -1,12 +1,11 @@
 <?php
 $server = "localhost";
-$user   = "root";
-$pass   = "";
+$user = "root";
+$pass = "";
 $dbname = "ewu_library_system";
 
-$conn = mysqli_connect($server, $user, $pass, $dbname);
-
-if(!$conn){
-    die("Database connection failed: " . mysqli_connect_error());
+$conn = new mysqli($server, $user, $pass, $dbname);
+if($conn->connect_error){
+    die("Connection failed: " . $conn->connect_error);
 }
 ?>
